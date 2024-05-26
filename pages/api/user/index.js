@@ -3,7 +3,7 @@ import { findUserByUsername, updateUserById } from '@/api-lib/db';
 import { auths, validateBody } from '@/api-lib/middlewares';
 import { getMongoDb } from '@/api-lib/mongodb';
 import { ncOpts } from '@/api-lib/nc';
-import { getSession } from '@/api-lib/session';
+import { getSession } from '@/api-lib/middlewares/session';
 import { slugUsername } from '@/lib/user';
 import multer from 'multer';
 import nc from 'next-connect';

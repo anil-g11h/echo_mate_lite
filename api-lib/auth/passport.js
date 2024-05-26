@@ -8,19 +8,11 @@ passport.serializeUser((user, done) => {
   done(null, user._id);
 });
 
-passport.deserializeUser((req, id, done) => {
-  getMongoDb().then((db) => {
-    findUserForAuth(db, id).then(
-      (user) => {
-        console.log('deserializeUser', user);
-        done(null, user);
-      },
-      (err) => {
-        console.log('deserializeUserError', err);
-        done(err);
-      }
-    );
-  });
+passport.deserializeUser(async (req, id, done) => {
+  const db = await getMongoDb();
+  const user = await findUserForAuth(db, id);
+  console.log('deserializeUser', user);
+  done(null, user);
 });
 
 passport.use(
