@@ -1,14 +1,23 @@
-// This project uses the nodemailer library to send email
-// However, it is recommended to switch over to dedicated email services
-// like Mailgun, AWS SES, etc.
 import nodemailer from 'nodemailer';
+import * as aws from '@aws-sdk/client-ses';
+// So we can use .env variables locally import dotenv
+import * as dotenv from 'dotenv';
 
-const nodemailerConfig = process.env.NODEMAILER_CONFIG
-  ? JSON.parse(process.env.NODEMAILER_CONFIG)
-  : {};
+dotenv.config();
 
-const transporter = nodemailer.createTransport(nodemailerConfig);
+const ses = new aws.SES({
+  apiVersion: '2010-12-01',
+  region: 'ap-south-1',
+  credentials: {
+    accessKeyId: process.env.ACCESS_KEY,
+    secretAccessKey: process.env.SECRET_KEY,
+  },
+});
 
+// create Nodemailer SES transporter
+const transporter = nodemailer.createTransport({
+  SES: { ses, aws },
+});
 export async function sendMail({ from, to, subject, html }) {
   try {
     await transporter.sendMail({
