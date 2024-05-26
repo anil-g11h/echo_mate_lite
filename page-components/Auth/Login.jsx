@@ -37,7 +37,8 @@ const Login = () => {
             password: passwordRef.current.value,
           }),
         });
-        mutate({ user: response.user }, false);
+        console.log('response.user', response.user);
+        mutate({ user: response.user });
         toast.success('You have been logged in.');
       } catch (e) {
         toast.error('Incorrect email or password.');
