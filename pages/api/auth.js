@@ -8,6 +8,7 @@ const handler = nc(ncOpts);
 handler.use(...auths);
 
 handler.post(passport.authenticate('local'), (req, res) => {
+  console.log('req.user', req.user);
   res.json({ user: req.user });
 });
 
