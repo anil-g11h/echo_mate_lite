@@ -61,6 +61,7 @@ const PosterInner = ({ user }) => {
 
 const Poster = () => {
   const { data, error } = useCurrentUser();
+  console.log('data', data);
   const loading = !data && !error;
 
   return (
