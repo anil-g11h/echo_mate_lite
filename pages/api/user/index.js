@@ -14,7 +14,7 @@ const handler = nc(ncOpts);
 handler.use(...auths);
 
 handler.get(async (req, res) => {
-  console.log('req.userapi', req);
+  console.log('req.userapi', req.user, req.session);
   const session = await getSession(req, res);
   console.log('session', session);
   if (!req.user) return res.json({ user: null });
