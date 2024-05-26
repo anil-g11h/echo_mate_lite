@@ -22,7 +22,7 @@ jobs:
         run: docker push echomatelite/nextjs-app:latest
 
   deploy:
-    depends: build
+    needs: build
     runs-on: self-hosted
     steps:
       - name: pull image from docker hub
