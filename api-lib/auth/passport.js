@@ -4,14 +4,21 @@ import { Strategy as LocalStrategy } from 'passport-local';
 import { getMongoDb } from '../mongodb';
 
 passport.serializeUser((user, done) => {
+  console.log('serializeUser', user);
   done(null, user._id);
 });
 
 passport.deserializeUser((req, id, done) => {
   getMongoDb().then((db) => {
     findUserForAuth(db, id).then(
-      (user) => done(null, user),
-      (err) => done(err)
+      (user) => {
+        console.log('deserializeUser', user);
+        done(null, user);
+      },
+      (err) => {
+        console.log('deserializeUserError', err);
+        done(err);
+      }
     );
   });
 });
