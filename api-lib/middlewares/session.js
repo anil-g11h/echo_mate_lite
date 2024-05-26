@@ -8,7 +8,7 @@ const mongoStore = MongoStore.create({
   stringify: false,
 });
 
-const getSession = nextSession({
+export const getSession = nextSession({
   store: promisifyStore(mongoStore),
   cookie: {
     httpOnly: true,
