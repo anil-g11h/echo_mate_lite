@@ -13,6 +13,7 @@ const handler = nc(ncOpts);
 handler.use(...auths);
 
 handler.get(async (req, res) => {
+  console.log('req.user', req.user)
   if (!req.user) return res.json({ user: null });
   return res.json({ user: req.user });
 });
