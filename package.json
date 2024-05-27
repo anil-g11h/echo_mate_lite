@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-mongodb-app",
+  "name": "echomatelite",
   "version": "1.0.0",
   "description": "Full fledged app made with Next.JS and MongoDB",
   "main": "index.js",
@@ -11,14 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoangvvo/nextjs-mongodb-app.git"
+    "url": "git+https://github.com/anil-g11h/echo_mate_lite.git"
   },
-  "author": "Hoang Vo (https://hoangvvo.com)",
+  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hoangvvo/nextjs-mongodb-app/issues"
-  },
-  "homepage": "https://github.com/hoangvvo/nextjs-mongodb-app#readme",
+  "homepage": "https://github.com/anil-g11h/echo_mate_lite#readme",
   "dependencies": {
     "@aws-sdk/client-ses": "^3.583.0",
     "@lukeed/ms": "^2.0.0",
