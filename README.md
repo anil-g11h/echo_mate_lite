@@ -1,5 +1,5 @@
 
-<h1 align="center">echoMateLite</h1>
+<h1 align="center">EchoMateLite</h1>
 
 <div align="center">
   
