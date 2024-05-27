@@ -1,14 +1,11 @@
-[![Next.js](https://assets.zeit.co/image/upload/v1538361091/repositories/next-js/next-js.png)](https://nextjs.org)
 
-<h1 align="center">Next.js ❤️ MongoDB</h1>
+<h1 align="center">echoMateLite</h1>
 
 <div align="center">
   
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhoangvvo%2Fnextjs-mongodb-app&env=MONGODB_URI,CLOUDINARY_URL,NODEMAILER_CONFIG,WEB_URI&envDescription=Environment%20Variables&envLink=https%3A%2F%2Fgithub.com%2Fhoangvvo%2Fnextjs-mongodb-app%23environmental-variables&demo-title=nextjs-mongodb-app%20demo&demo-description=A%20demo%20deployed%20on%20Vercel&demo-url=https%3A%2F%2Fnextjs-mongodb.vercel.app%2F)
 
 An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www.mongodb.com/) web application, designed with simplicity for learning and real-world applicability in mind.
-
-:rocket: [Check out the demo](https://nextjs-mongodb.vercel.app/) :rocket:
 
 </div>
 
@@ -36,7 +33,6 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 - [x] Session-based authentication ([Passport.js](https://github.com/jaredhanson/passport))
 - [x] Sign up/Log in/Sign out API
 - [x] Authentication via email/password
-- [ ] Authentication via OAuth (Google, Facebook, etc.)
 - [x] Email verification
 - [x] Password change
 - [x] Password reset via email
@@ -63,18 +59,9 @@ An [**Next.js**](https://github.com/zeit/next.js/) and [**MongoDB**](https://www
 
 <div align="center">
   
-<sup>Have any features that interest you, [make an issue](https://github.com/hoangvvo/nextjs-mongodb-app/issues). Would like to work on a feature, [make a PR](https://github.com/hoangvvo/nextjs-mongodb-app/pulls).<sup>
-  
 </div>
 
 <h2 align="center">Guide</h2>
-
-This project accompanies the following posts:
-
-- [User authentication (using Passport.js)](https://hoangvvo.com/blog/next-js-and-mongodb-app-1)
-- [User profile and Profile Picture](https://hoangvvo.com/blog/next-js-and-mongodb-app-2)
-- [Email Verification, Password Reset/Changee](https://hoangvvo.com/blog/next-js-and-mongodb-app-3)
-- [Posts and comments](https://hoangvvo.com/blog/next-js-and-mongodb-app-4)
 
 Also check them out on [dev.to](https://dev.to/hoangvvo).
 
@@ -106,8 +93,6 @@ Environmental variables in this project include:
 
 - `MONGODB_URI` The MongoDB Connection String (with credentials and database name)
 - `WEB_URI` The _URL_ of your web app.
-- `CLOUDINARY_URL` (optional, Cloudinary **only**) Cloudinary environment variable for configuration. See [this](https://cloudinary.com/documentation/node_integration#configuration).
-- `NODEMAILER_CONFIG` (optional, if using nodemailer **only**) JSON stringified nodemailer config. eg. `{"service":"Gmail","auth":{"user":"hoangvvo.02@gmail.com","pass":"aHR0cHM6Ly95b3V0dS5iZS9kUXc0dzlXZ1hjUQ=="}}`
 
 <h3 align="center">Development</h3>
 
@@ -124,17 +109,4 @@ You can also deploy this with serverless providers given the correct setup.
 <h2 align="center">Contributing</h2>
 
 <div align="center">
-  
-Please see my [contributing.md](CONTRIBUTING.md).
-
-</div>
-
-<h2 align="center">
-  License
-</h2>
-
-<div align="center">
-  
-  [MIT](LICENSE)
-  
 </div>
