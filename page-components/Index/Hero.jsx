@@ -8,9 +8,9 @@ const Hero = () => {
     <Wrapper>
       <div>
         <h1 className={styles.title}>
-          <span className={styles.nextjs}>Next.js</span>
-          <span className={styles.mongodb}>MongoDB</span>
-          <span>App</span>
+          <span className={styles.nextjs}>EchoMateLite</span>
+          <span className={styles.mongodb}>Social</span>
+          <span>Feeds</span>
         </h1>
         <Container justifyContent="center" className={styles.buttons}>
           <Container>
@@ -21,7 +21,7 @@ const Hero = () => {
           <Spacer axis="horizontal" size={1} />
           <Container>
             <ButtonLink
-              href="https://github.com/hoangvvo/nextjs-mongodb-app"
+              href="https://github.com/anil-g11h/echo_mate_lite"
               type="secondary"
               className={styles.button}
             >
