@@ -12,7 +12,7 @@ export const getSession = nextSession({
   store: promisifyStore(mongoStore),
   cookie: {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    // secure: process.env.NODE_ENV === 'production',
     maxAge: 2 * 7 * 24 * 60 * 60, // 2 weeks,
     path: '/',
     sameSite: 'strict',
