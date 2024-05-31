@@ -105,3 +105,7 @@ This project can be deployed [anywhere Next.js can be deployed](https://nextjs.o
 After building using `npm run build`, simply start the server using `npm run start`.
 
 You can also deploy this with serverless providers given the correct setup.
+
+
+Ref
+https://vercel.com/templates/next.js/aws-s3-image-upload-nextjs
