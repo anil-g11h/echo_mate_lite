@@ -61,7 +61,7 @@ handler.patch(
       };
 
       try {
-        const uploadResult = await s3.send(new PutObjectCommand(params));
+        await s3.send(new PutObjectCommand(params));
         profilePicture = `https://${params.Bucket}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
       } catch (err) {
         console.error('Error uploading to S3', err);
