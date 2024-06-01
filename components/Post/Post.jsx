@@ -3,6 +3,7 @@ import { Container } from '@/components/Layout';
 import { format } from '@lukeed/ms';
 import clsx from 'clsx';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useMemo } from 'react';
 import styles from './Post.module.css';
 
@@ -33,12 +34,26 @@ const Post = ({ post, className }) => {
         <p className={styles.content}>{post.content}</p>
       </div>
       <div className={styles.wrap}>
+        {post.image ? (
+          <Image src={post.image} alt="image" width={100} height={100} />
+        ) : null}
+      </div>
+      <div className={styles.wrap}>
         <time dateTime={String(post.createdAt)} className={styles.timestamp}>
           {timestampTxt}
         </time>
       </div>
     </div>
   );
+};
+
+export const config = {
+  api: {
+    bodyParser: false, // Disables the built-in body parser for API routes
+  },
+  images: {
+    domains: ['echomatelite3.s3.ap-south-1.amazonaws.com'], // Add your S3 bucket hostname here
+  },
 };
 
 export default Post;

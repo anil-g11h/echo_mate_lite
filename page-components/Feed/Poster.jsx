@@ -14,6 +14,7 @@ import styles from './Poster.module.css';
 
 const PosterInner = ({ user }) => {
   const contentRef = useRef();
+  const fileRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
 
   const { mutate } = usePostPages();
@@ -23,13 +24,19 @@ const PosterInner = ({ user }) => {
       e.preventDefault();
       try {
         setIsLoading(true);
+        const formData = new FormData();
+        formData.append('content', contentRef.current.value);
+        if (fileRef.current.files[0]) {
+          formData.append('image', fileRef.current.files[0]);
+        }
+
         await fetcher('/api/posts', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ content: contentRef.current.value }),
+          body: formData,
         });
         toast.success('You have posted successfully');
         contentRef.current.value = '';
+        fileRef.current.value = '';
         // refresh post lists
         mutate();
       } catch (e) {
@@ -51,6 +58,12 @@ const PosterInner = ({ user }) => {
           placeholder={`What's on your mind, ${user.name}?`}
           ariaLabel={`What's on your mind, ${user.name}?`}
         />
+        <input
+          type="file"
+          ref={fileRef}
+          accept="image/*"
+          className={styles.fileInput}
+        />
         <Button type="success" loading={isLoading}>
           Post
         </Button>
@@ -61,7 +74,6 @@ const PosterInner = ({ user }) => {
 
 const Poster = () => {
   const { data, error } = useCurrentUser();
-  console.log('data', data, error);
   const loading = !data && !error;
 
   return (
