@@ -37,5 +37,7 @@ jobs:
         run: docker pull echomatelite/nextjs-app:latest
       - name: delete old container
         run: docker rm -f nextjs-app-contianer
+      - name: delete all old images
+        run: docker rmi $(docker images -a -q)
       - name: Run Docker container
         run: docker run -d -p 3000:3000 --name nextjs-app-contianer echomatelite/nextjs-app:latest
